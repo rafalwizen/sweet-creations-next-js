@@ -1,5 +1,6 @@
 'use client';
-import { useState, FormEvent } from "react";;
+import { useState, FormEvent } from "react";
+import Image from 'next/image';
 import backgroundImage from '../assets/images/background-image-contact.webp';
 
 const Contact = () => {
@@ -17,9 +18,12 @@ const Contact = () => {
 
     return (
         <div className="min-h-screen pt-24 md:pt-16 relative">
-            <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url(${backgroundImage})` }}
+            <Image
+                src={backgroundImage}
+                alt="Background"
+                fill
+                className="object-cover"
+                priority
             />
             <div className="absolute inset-0 bg-black/30" />
 
