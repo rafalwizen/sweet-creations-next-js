@@ -1,4 +1,7 @@
+"use client";
+
 import { useState } from "react";
+import Image from "next/image";
 import cake1 from '../assets/images/1.webp';
 import cake2 from '../assets/images/2.webp';
 import cake3 from '../assets/images/3.webp';
@@ -9,9 +12,7 @@ import cake6 from '../assets/images/6.webp';
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
-    const images = [
-        cake1, cake2, cake3, cake4, cake5, cake6
-    ];
+    const images = [cake1, cake2, cake3, cake4, cake5, cake6];
 
     return (
         <>
@@ -20,11 +21,13 @@ const Gallery = () => {
                     <div
                         key={index}
                         className="cursor-pointer transform transition-transform hover:scale-105"
-                        onClick={() => setSelectedImage(image)}
+                        onClick={() => setSelectedImage(image.src)}
                     >
-                        <img
+                        <Image
                             src={image}
                             alt={`Cake ${index + 1}`}
+                            width={400}
+                            height={256}
                             className="w-full h-64 object-cover rounded-lg shadow-md"
                         />
                     </div>
