@@ -1,8 +1,11 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
-    const location = useLocation();
-    const navigate = useNavigate();
+    const pathname = usePathname();
+    const router = useRouter();
 
     const scrollToSection = (id: string) => {
         const element = document.getElementById(id);
@@ -10,8 +13,8 @@ const Navbar = () => {
     };
 
     const handleNavigation = (id: string) => {
-        if (location.pathname !== '/') {
-            navigate('/', { state: { scrollTo: id } });
+        if (pathname !== "/") {
+            router.push(`/?scrollTo=${id}`);
         } else {
             scrollToSection(id);
         }
@@ -22,7 +25,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4">
                 <div className="flex justify-between h-24 md:h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="text-primary font-bold text-2xl md:text-3xl font-greatVibes">
+                        <Link href="/" className="text-primary font-bold text-2xl md:text-3xl font-greatVibes">
                             Hanuskowy Torcik
                         </Link>
                     </div>
@@ -40,7 +43,7 @@ const Navbar = () => {
                             Galeria
                         </button>
                         <Link
-                            to="/contact"
+                            href="/contact"
                             className="bg-primary text-white px-4 py-2 rounded-md hover:bg-accent transition-colors"
                         >
                             Kontakt

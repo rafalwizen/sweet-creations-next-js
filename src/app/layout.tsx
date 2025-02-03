@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import {Great_Vibes} from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const greatVibes = Great_Vibes({
     subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({children}: {
     return (
         <html lang="pl" className={greatVibes.variable}>
         <body>
+        <Navbar />
         {children}
         </body>
         </html>
