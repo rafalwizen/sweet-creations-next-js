@@ -1,24 +1,24 @@
+"use client"
+
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import Gallery from "../components/Gallery";
 import backgroundImage from '../assets/images/background-image-home.webp';
 import profilePhoto from '../assets/images/profilePhoto.webp';
 
-interface LocationState {
-    scrollTo?: string;
-}
-
 const Home = () => {
-    const location = useLocation();
-    const state = location.state as LocationState;
+    const searchParams = useSearchParams();
+    const scrollTo = searchParams.get("scrollTo");
 
     useEffect(() => {
-        if (state?.scrollTo) {
-            const element = document.getElementById(state.scrollTo);
+        if (scrollTo) {
+            const element = document.getElementById(scrollTo);
+
             element?.scrollIntoView({ behavior: "smooth" });
             window.history.replaceState({}, document.title);
         }
-    }, [state]);
+    }, [scrollTo]);
 
     return (
         <div className="pt-24 md:pt-16">
@@ -28,13 +28,13 @@ const Home = () => {
             >
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${backgroundImage})` }}
+                    style={{ backgroundImage: `url(${backgroundImage.src})` }}
                 />
                 <div className="absolute inset-0 bg-black/30" />
 
                 <div className="relative max-w-7xl mx-auto py-16 flex flex-col md:flex-row items-center gap-8">
                     <div className="w-full md:w-1/2">
-                        <img
+                        <Image
                             src={profilePhoto}
                             alt="Profile"
                             className="rounded-full w-64 h-64 mx-auto object-cover shadow-lg border-4 border-white"
