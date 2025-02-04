@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'GreatVibes';
+    src: url('/fonts/GreatVibes.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LoraItalic';
+    src: url('/fonts/LoraItalic.ttf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+body {
+    font-family: 'LoraItalic', serif;
+}
+
+h1, h2, h3 {
+    font-family: 'GreatVibes', cursive;
+}

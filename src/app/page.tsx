@@ -1,15 +1,11 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
 import Home from "@/components/Home";
-import Gallery from "@/components/Gallery";
 
 export const metadata: Metadata = {
   title: 'Strona Główna - Słodkie Wypieki',
 };
 
 export default function HomePage() {
-  // Schema.org data dla lepszego SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
