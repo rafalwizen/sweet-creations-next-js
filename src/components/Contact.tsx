@@ -1,19 +1,32 @@
 'use client';
 import { useState, FormEvent } from "react";
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 import backgroundImage from '../assets/images/background-image-contact.webp';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
+        domain: "Hanuskowy Torcik", // used for my common template in emailJS
         name: "",
         email: "",
         message: "",
     });
 
+    // ToDo add notifications
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        // TODO add server and contact form logic
+        const form = e.target as HTMLFormElement;
+        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
+        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
+        const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string;
+        emailjs.sendForm(serviceID, templateID, form, userID)
+            .then(() => {
+                console.log("sended")
+            }, (error) => {
+                console.log("error")
+                console.log(error)
+            });
+        form.reset();
     };
 
     return (
