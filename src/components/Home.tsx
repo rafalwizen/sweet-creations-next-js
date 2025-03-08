@@ -21,26 +21,29 @@ const Home = () => {
     }, [scrollTo]);
 
     return (
-        <div className="pt-24 md:pt-16">
+        <div className="pt-24 md:pt-16 w-full">
             <section
                 id="about"
-                className="relative min-h-screen flex items-center justify-center px-4"
+                className="relative min-h-screen w-screen flex items-center justify-center"
             >
                 <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: `url(${backgroundImage.src})` }}
+                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: `url(${backgroundImage.src})`,
+                        width: '100vw'
+                    }}
                 />
-                <div className="absolute inset-0 bg-black/30" />
+                <div className="absolute inset-0 bg-black/30 w-full" />
 
-                <div className="relative max-w-7xl mx-auto py-16 flex flex-col md:flex-row items-center gap-8">
-                    <div className="w-full md:w-1/2">
+                <div className="relative w-full px-4 py-16 flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div className="w-full md:w-1/3 lg:w-1/4">
                         <Image
                             src={profilePhoto}
                             alt="Profile"
                             className="rounded-full w-64 h-64 mx-auto object-cover shadow-lg border-4 border-white"
                         />
                     </div>
-                    <div className="w-full md:w-1/2 text-center md:text-left">
+                    <div className="w-full md:w-1/2 lg:w-2/5 text-center md:text-left">
                         <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg">
                             <h1 className="text-4xl font-bold text-primary mb-4">
                                 Witaj w moim świecie słodkości
@@ -57,7 +60,9 @@ const Home = () => {
                     <h2 className="text-3xl font-bold text-primary text-center mb-12">
                         Moje realizacje
                     </h2>
-                    <Gallery />
+                    <div className="w-full max-w-[2000px] mx-auto">
+                        <Gallery />
+                    </div>
                 </div>
             </section>
         </div>
