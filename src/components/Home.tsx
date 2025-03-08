@@ -26,12 +26,13 @@ const Home = () => {
                 id="about"
                 className="relative min-h-screen w-screen flex items-center justify-center"
             >
-                <div
-                    className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: `url(${backgroundImage.src})`,
-                        width: '100vw'
-                    }}
+                <Image
+                    src={backgroundImage}
+                    alt="Background"
+                    priority
+                    fill
+                    className="absolute inset-0 object-cover w-full h-full"
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-black/30 w-full" />
 
@@ -40,6 +41,7 @@ const Home = () => {
                         <Image
                             src={profilePhoto}
                             alt="Profile"
+                            priority
                             className="rounded-full w-64 h-64 mx-auto object-cover shadow-lg border-4 border-white"
                         />
                     </div>
