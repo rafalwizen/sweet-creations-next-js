@@ -2,21 +2,21 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import cake01 from '../assets/images/image00001.jpeg';
-import cake02 from '../assets/images/image00002.jpeg';
-import cake03 from '../assets/images/image00003.jpeg';
-import cake04 from '../assets/images/image00004.jpeg';
-import cake06 from '../assets/images/image00006.jpeg';
-import cake07 from '../assets/images/image00007.jpeg';
-import cake08 from '../assets/images/image00008.jpeg';
-import cake09 from '../assets/images/image00009.jpeg';
-import cake10 from '../assets/images/image00010.jpeg';
-import cake11 from '../assets/images/image00011.jpeg';
-import cake12 from '../assets/images/image00012.jpeg';
-import cake13 from '../assets/images/image00013.jpeg';
-import cake14 from '../assets/images/image00014.jpeg';
-import cake15 from '../assets/images/image00015.jpeg';
-import cake16 from '../assets/images/image00016.jpeg';
+import cake01 from '../assets/images/image00001.webp';
+import cake02 from '../assets/images/image00002.webp';
+import cake03 from '../assets/images/image00003.webp';
+import cake04 from '../assets/images/image00004.webp';
+import cake06 from '../assets/images/image00006.webp';
+import cake07 from '../assets/images/image00007.webp';
+import cake08 from '../assets/images/image00008.webp';
+import cake09 from '../assets/images/image00009.webp';
+import cake10 from '../assets/images/image00010.webp';
+import cake11 from '../assets/images/image00011.webp';
+import cake12 from '../assets/images/image00012.webp';
+import cake13 from '../assets/images/image00013.webp';
+import cake14 from '../assets/images/image00014.webp';
+import cake15 from '../assets/images/image00015.webp';
+import cake16 from '../assets/images/image00016.webp';
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -51,11 +51,13 @@ const Gallery = () => {
                     className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
                     onClick={() => setSelectedImage(null)}
                 >
-                    <div className="max-w-4xl w-full mx-4">
-                        <img
+                    <div className="max-w-4xl mx-4 relative w-screen h-screen">
+                        <Image
                             src={selectedImage}
                             alt="Selected cake"
-                            className="w-full h-auto"
+                            fill
+                            className="w-full h-auto object-cover"
+                            priority
                         />
                     </div>
                 </div>
