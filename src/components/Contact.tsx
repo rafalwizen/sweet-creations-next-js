@@ -12,21 +12,37 @@ const Contact = () => {
         message: "",
     });
 
-    // ToDo add notifications
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
         const form = e.target as HTMLFormElement;
         const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string;
         const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
         const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string;
+
         emailjs.sendForm(serviceID, templateID, form, userID)
             .then(() => {
-                console.log("sended")
+                console.log("Wiadomość wysłana pomyślnie");
+                setSubmitStatus('success');
+                setFormData({
+                    domain: "Hanuskowy Torcik",
+                    name: "",
+                    email: "",
+                    message: "",
+                });
             }, (error) => {
-                console.log("error")
-                console.log(error)
+                console.log("Błąd podczas wysyłania wiadomości");
+                console.log(error);
+                setSubmitStatus('error');
+            })
+            .finally(() => {
+                setIsSubmitting(false);
             });
-        form.reset();
     };
 
     return (
@@ -45,7 +61,26 @@ const Contact = () => {
                     <h1 className="text-3xl font-bold text-primary text-center mb-8">
                         Skontaktuj się ze mną
                     </h1>
+
+                    {submitStatus === 'success' && (
+                        <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-md">
+                            Wiadomość została wysłana pomyślnie!
+                        </div>
+                    )}
+
+                    {submitStatus === 'error' && (
+                        <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-md">
+                            Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.
+                        </div>
+                    )}
+
                     <form onSubmit={handleSubmit} className="space-y-6">
+                        <input
+                            type="hidden"
+                            name="domain"
+                            value={formData.domain}
+                        />
+
                         <div>
                             <label
                                 htmlFor="name"
@@ -56,6 +91,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 id="name"
+                                name="name"
                                 required
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
                                 value={formData.name}
@@ -74,6 +110,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="email"
+                                name="email"
                                 required
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
                                 value={formData.email}
@@ -91,6 +128,7 @@ const Contact = () => {
                             </label>
                             <textarea
                                 id="message"
+                                name="message"
                                 required
                                 rows={4}
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
@@ -102,9 +140,14 @@ const Contact = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-accent transition-colors shadow-md hover:shadow-lg"
+                            disabled={isSubmitting}
+                            className={`w-full py-3 px-4 rounded-md shadow-md hover:shadow-lg transition-colors ${
+                                isSubmitting
+                                    ? "bg-gray-400 cursor-not-allowed"
+                                    : "bg-primary text-white hover:bg-accent"
+                            }`}
                         >
-                            Wyślij wiadomość
+                            {isSubmitting ? "Wysyłanie..." : "Wyślij wiadomość"}
                         </button>
                     </form>
                 </div>
