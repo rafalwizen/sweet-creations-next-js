@@ -2,7 +2,7 @@
 import { useState, FormEvent } from "react";
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
-import backgroundImage from '../assets/images/background-image-contact.webp';
+import backgroundImage from '../assets/images/background-image-contact-1.webp';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -93,7 +93,7 @@ const Contact = () => {
                                 id="name"
                                 name="name"
                                 required
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
+                                className="mt-1 block w-full min-h-[30px] pl-3 rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
                                 value={formData.name}
                                 onChange={(e) =>
                                     setFormData({ ...formData, name: e.target.value })
@@ -112,7 +112,7 @@ const Contact = () => {
                                 id="email"
                                 name="email"
                                 required
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
+                                className="mt-1 block w-full min-h-[30px] pl-3 rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
                                 value={formData.email}
                                 onChange={(e) =>
                                     setFormData({ ...formData, email: e.target.value })
@@ -131,7 +131,7 @@ const Contact = () => {
                                 name="message"
                                 required
                                 rows={4}
-                                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
+                                className="mt-1 block w-full min-h-[30px] pl-3 pt-2 rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary bg-white"
                                 value={formData.message}
                                 onChange={(e) =>
                                     setFormData({ ...formData, message: e.target.value })

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Gallery from "../components/Gallery";
-import backgroundImage from '../assets/images/background-image-home.webp';
+import backgroundImage from '../assets/images/background-image-home-2.webp';
 import profilePhoto from '../assets/images/profilePhoto.webp';
 
 const Home = () => {
