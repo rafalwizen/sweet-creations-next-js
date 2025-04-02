@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Gallery from "../components/Gallery";
@@ -71,4 +71,10 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default function Page() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Home />
+        </Suspense>
+    );
+}
