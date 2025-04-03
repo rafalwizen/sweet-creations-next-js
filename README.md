@@ -6,6 +6,11 @@
 - [Next.js](https://nextjs.org)
 
 ## Screenshots
+### New green style
+![Screen 4](screenshots/screenshot4.jpg)
+![Screen 5](screenshots/screenshot5.jpg)
+![Screen 6](screenshots/screenshot6.jpg)
+### Old pink style
 ![Screen 1](screenshots/screenshot1.jpg)
 ![Screen 2](screenshots/screenshot2.jpg)
 ![Screen 3](screenshots/screenshot3.jpg)
