@@ -2,7 +2,7 @@
 import { useState, FormEvent } from "react";
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
-import backgroundImage from '../assets/images/background-image-contact-1.webp';
+import backgroundImage from '../assets/images/wood_background.webp';
 
 const Contact = () => {
     const [formData, setFormData] = useState({

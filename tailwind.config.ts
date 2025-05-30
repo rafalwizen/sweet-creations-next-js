@@ -9,10 +9,10 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#75df82",
+          DEFAULT: "#7A4526",
         },
         accent: {
-          DEFAULT: "#ABE1B3",
+          DEFAULT: "#b8642f",
         },
         background: {
           DEFAULT: "#F9FAFB",

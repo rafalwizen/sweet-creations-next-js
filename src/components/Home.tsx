@@ -4,7 +4,7 @@ import { Suspense, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Gallery from "../components/Gallery";
-import backgroundImage from '../assets/images/background-image-home-2.webp';
+import backgroundImage from '../assets/images/wood_background.webp';
 import profilePhoto from '../assets/images/profilePhoto.webp';
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
         <div className="pt-24 md:pt-16 w-full">
             <section
                 id="about"
-                className="relative min-h-screen w-screen flex items-center justify-center"
+                className="relative h-[50vh] w-screen flex items-center justify-center"
             >
                 <Image
                     src={backgroundImage}
