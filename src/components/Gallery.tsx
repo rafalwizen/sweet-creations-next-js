@@ -12,18 +12,25 @@ import cake08 from '../assets/images/image00008.webp';
 import cake09 from '../assets/images/image00009.webp';
 import cake10 from '../assets/images/image00010.webp';
 import cake11 from '../assets/images/image00011.webp';
-import cake12 from '../assets/images/image00012.webp';
 import cake13 from '../assets/images/image00013.webp';
-import cake14 from '../assets/images/image00014.webp';
 import cake15 from '../assets/images/image00015.webp';
 import cake16 from '../assets/images/image00016.webp';
+import cake17 from '../assets/images/image00017.webp';
+import cake18 from '../assets/images/image00018.webp';
+import cake19 from '../assets/images/image00019.webp';
+import cake20 from '../assets/images/image00020.webp';
+import cake21 from '../assets/images/image00021.webp';
+import cake22 from '../assets/images/image00022.webp';
+import cake23 from '../assets/images/image00023.webp';
+import cake24 from '../assets/images/image00024.webp';
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     const images = [
-        cake01, cake02, cake03, cake04, cake06, cake07, cake08,
-        cake09, cake10, cake11, cake12, cake13, cake14, cake15, cake16
+        cake24, cake22, cake01, cake02, cake03, cake04, cake06,
+        cake08, cake09, cake10, cake11, cake15, cake13, cake16,
+        cake23, cake17, cake18, cake19, cake20, cake21, cake07
     ];
 
     return (
