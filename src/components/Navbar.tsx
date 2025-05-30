@@ -30,12 +30,6 @@ const Navbar = () => {
             <div className="w-full mx-auto px-4">
                 <div className="flex justify-between h-24 md:h-16">
                     <div className="flex items-center">
-                        <button
-                            onClick={() => handleNavigation("home")}
-                            className="text-primary font-bold text-2xl md:text-3xl font-greatVibes"
-                        >
-                            Hanuskowy Torcik
-                        </button>
                     </div>
                     <div className="flex items-center space-x-4">
                         <button
