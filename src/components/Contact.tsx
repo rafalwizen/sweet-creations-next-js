@@ -68,14 +68,14 @@ const Contact = () => {
                         </h1>
 
                         {submitStatus === 'success' && (
-                            <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-md">
+                            <div className="mb-6 p-4 bg-light text-accent rounded-md">
                                 Wiadomość została wysłana pomyślnie!
                             </div>
                         )}
 
                         {submitStatus === 'error' && (
-                            <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-md">
-                                Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później.
+                            <div className="mb-6 p-4 bg-light text-accent rounded-md">
+                                Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie za chwilę.
                             </div>
                         )}
 

@@ -12,7 +12,10 @@ export default {
           DEFAULT: "#7A4526",
         },
         accent: {
-          DEFAULT: "#b8642f",
+          DEFAULT: "#934a1a",
+        },
+        light : {
+          DEFAULT: "#efebe9",
         },
         background: {
           DEFAULT: "#F9FAFB",
