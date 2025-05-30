@@ -14,7 +14,7 @@ const About = () => {
                         src={profilePhoto}
                         alt="Profile"
                         priority
-                        className="rounded-full w-64 h-64 mx-auto object-cover shadow-lg border-4 border-white"
+                        className="rounded-full w-72 h-72 mx-auto object-cover shadow-lg border-4 border-white"
                     />
                 </div>
                 <div className="w-full md:w-1/2 lg:w-2/5 text-center md:text-left">
