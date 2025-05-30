@@ -1,29 +1,18 @@
 'use client';
 
-import { Suspense, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import Image from "next/image";
 import Gallery from "../components/Gallery";
 import backgroundImage from '../assets/images/wood_background.webp';
-import profilePhoto from '../assets/images/profilePhoto.webp';
+import profilePhoto from '../assets/images/logo.webp';
+import Contact from "@/components/Contact";
 
 const Home = () => {
-    const searchParams = useSearchParams();
-    const scrollTo = searchParams.get("scrollTo");
-
-    useEffect(() => {
-        if (scrollTo) {
-            const element = document.getElementById(scrollTo);
-
-            element?.scrollIntoView({ behavior: "smooth" });
-            window.history.replaceState({}, document.title);
-        }
-    }, [scrollTo]);
 
     return (
         <div className="pt-24 md:pt-16 w-full">
             <section
-                id="about"
+                id="home"
                 className="relative h-[50vh] w-screen flex items-center justify-center"
             >
                 <Image
@@ -42,18 +31,8 @@ const Home = () => {
                             src={profilePhoto}
                             alt="Profile"
                             priority
-                            className="rounded-full w-64 h-64 mx-auto object-cover shadow-lg border-4 border-white"
+                            className="rounded-full w-72 h-72 mx-auto object-cover shadow-lg border-4 border-white md:w-96 md:h-96"
                         />
-                    </div>
-                    <div className="w-full md:w-1/2 lg:w-2/5 text-center md:text-left">
-                        <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg shadow-lg">
-                            <h1 className="text-4xl font-bold text-primary mb-4">
-                                Witaj w moim świecie słodkości
-                            </h1>
-                            <p className="text-gray-600 text-justify mb-6">
-                                Tworzę wyjątkowe torty na zamówienie, idealne na każdą okazję. W mojej galerii znajdziesz przykłady moich prac, które zachwycają smakiem i wyglądem. Masz pomysł na swój wymarzony tort? Skontaktuj się ze mną a&nbsp;razem stworzymy coś wyjątkowego!
-                            </p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -75,6 +54,7 @@ export default function Page() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <Home />
+            <Contact />
         </Suspense>
     );
 }
