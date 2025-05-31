@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'Słodkie Wypieki',
     images: [
       {
-        url: 'https://tortyartystyczne.vercel.app/assets/images/og_image.jpg',
+        url: 'https://tortyartystyczne.vercel.app/images/og_image.jpg',
         width: 464,
         height: 417,
         alt: 'Logo i wypieki Słodkie Wypieki',
@@ -27,8 +27,8 @@ export default function HomePage() {
     "@type": "LocalBusiness",
     "name": "Słodkie Wypieki",
     "image": [
-      "https://tortyartystyczne.vercel.app/assets/images/image00001.jpg",
-      "https://tortyartystyczne.vercel.app/assets/images/image00002.jpg"
+      "https://tortyartystyczne.vercel.app/images/cake1.jpg",
+      "https://tortyartystyczne.vercel.app/images/cake2.jpg"
     ],
     "description": "Domowe wypieki i torty na zamówienie",
     "address": {
