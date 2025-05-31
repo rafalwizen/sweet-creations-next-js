@@ -6,7 +6,10 @@
 - [Next.js](https://nextjs.org)
 
 ## Screeny ze strony
-### Nowy zielony styl
+### Nowy brązowy styl
+![Screen 7](screenshots/screenshot7.jpg)
+![Screen 8](screenshots/screenshot8.jpg)
+### Stary zielony styl
 ![Screen 4](screenshots/screenshot4.jpg)
 ![Screen 5](screenshots/screenshot5.jpg)
 ![Screen 6](screenshots/screenshot6.jpg)
@@ -19,4 +22,4 @@
 Jeśli chcesz się skontaktować, napisz na: [rafal.wizen@gmail.com](mailto:rafal.wizen@gmail.com)
 
 ## Licencja
-Projekt jest na licencji MIT.
+Projekt jest udostępniany na licencji MIT. Licencja nie dotyczy zdjęć zawartych w projekcie.
