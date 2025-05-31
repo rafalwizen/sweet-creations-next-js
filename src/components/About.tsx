@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import profilePhoto from "@/assets/images/profilePhoto.webp";
+import profilePhoto from "@/assets/images/profile_photo.webp";
 
 const About = () => {
 

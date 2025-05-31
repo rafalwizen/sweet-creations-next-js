@@ -3,6 +3,22 @@ import Home from "@/components/Home";
 
 export const metadata: Metadata = {
   title: 'Strona Główna - Słodkie Wypieki',
+  description: 'Domowe wypieki i torty na zamówienie z dostawą w Hanusku i okolicach.',
+  openGraph: {
+    title: 'Strona Główna - Słodkie Wypieki',
+    description: 'Domowe wypieki i torty na zamówienie z dostawą w Hanusku i okolicach.',
+    url: 'https://tortyartystyczne.vercel.app/',
+    siteName: 'Słodkie Wypieki',
+    images: [
+      {
+        url: 'https://tortyartystyczne.vercel.app/assets/images/og_image.jpg',
+        width: 464,
+        height: 417,
+        alt: 'Logo i wypieki Słodkie Wypieki',
+      },
+    ],
+    type: 'website',
+  }
 };
 
 export default function HomePage() {
@@ -11,37 +27,17 @@ export default function HomePage() {
     "@type": "LocalBusiness",
     "name": "Słodkie Wypieki",
     "image": [
-      "https://twoja-domena.pl/zdjecie1.jpg",
-      "https://twoja-domena.pl/zdjecie2.jpg"
+      "https://tortyartystyczne.vercel.app/assets/images/image00001.jpg",
+      "https://tortyartystyczne.vercel.app/assets/images/image00002.jpg"
     ],
     "description": "Domowe wypieki i torty na zamówienie",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Twoja ulica",
-      "addressLocality": "Twoje miasto",
-      "postalCode": "00-000",
+      "addressLocality": "Hanusek",
+      "postalCode": "42-690",
       "addressCountry": "PL"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 52.2297,
-      "longitude": 21.0122
-    },
-    "priceRange": "$$",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "17:00"
-      }
-    ]
+    }
   };
 
   return (
