@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import Image from "next/image";
 import Gallery from "../components/Gallery";
 import backgroundImage from '../assets/images/wood_background.webp';
-import profilePhoto from '../assets/images/logo.webp';
+import logo from '../assets/images/logo.webp';
 import Contact from "@/components/Contact";
 
 const Home = () => {
@@ -20,22 +20,25 @@ const Home = () => {
                     alt="Background"
                     priority
                     fill
-                    className="absolute inset-0 object-cover w-full h-full"
+                    className="absolute inset-0 object-cover w-full h-full z-0"
                     sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-black/30 w-full" />
+                <div className="absolute inset-0 bg-black/30 w-full z-0" />
 
-                <div className="relative w-full px-4 py-16 flex flex-col md:flex-row items-center justify-center gap-8">
-                    <div className="w-full md:w-1/3 lg:w-1/4">
-                        <Image
-                            src={profilePhoto}
-                            alt="Profile"
-                            priority
-                            className="rounded-full w-72 h-72 mx-auto object-cover shadow-lg border-4 border-white md:w-96 md:h-96"
-                        />
+                <div className="relative w-full px-4 py-16 flex flex-col md:flex-row items-center justify-center gap-8 z-10">
+                    <div className="w-full md:w-1/3 lg:w-1/4 flex justify-center">
+                        <div className="h-[80%] max-h-[40vh] aspect-square">
+                            <Image
+                                src={logo}
+                                alt="Logo"
+                                priority
+                                className="rounded-full object-cover shadow-lg border-4 border-white w-full h-full"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
+
             <section id="gallery" className="min-h-screen bg-background px-4">
                 <div className="max-w-7xl mx-auto py-16">
                     <h2 className="text-3xl font-bold text-primary text-center mb-12">
