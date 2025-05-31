@@ -75,7 +75,8 @@ const Contact = () => {
 
                         {submitStatus === 'error' && (
                             <div className="mb-6 p-4 bg-light text-accent rounded-md">
-                                Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie za chwilę.
+                                Niestety wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie za chwilę lub skontaktuj sie ze mną mailowo:
+                                <div><b>magda.wizen@gmail.com</b></div>
                             </div>
                         )}
 
