@@ -6,6 +6,7 @@ import Gallery from "../components/Gallery";
 import backgroundImage from '../assets/images/wood_background.webp';
 import logo from '../assets/images/logo.webp';
 import Contact from "@/components/Contact";
+import {Footer} from "@/components/Footer";
 
 const Home = () => {
 
@@ -58,6 +59,7 @@ export default function Page() {
         <Suspense fallback={<div>Loading...</div>}>
             <Home />
             <Contact />
+            <Footer />
         </Suspense>
     );
 }
