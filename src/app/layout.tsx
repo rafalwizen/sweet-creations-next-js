@@ -34,9 +34,6 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://twoja-domena.pl",
     },
-    icons: {
-        icon: "/favicon.svg",
-    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
