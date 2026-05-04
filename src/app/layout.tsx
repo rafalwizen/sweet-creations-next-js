@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         title: "Słodkie Wypieki - Domowe Ciasta i Torty na Zamówienie",
         description:
             "Oferuję przepyszne, domowe wypieki na każdą okazję. Torty urodzinowe, weselne, ciasta i słodkie przekąski.",
-        images: ["/og-image.jpg"],
+        images: ["/images/og-image.jpg"],
     },
     alternates: {
         canonical: "https://twoja-domena.pl",

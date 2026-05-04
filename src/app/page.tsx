@@ -26,10 +26,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Słodkie Wypieki",
-    "image": [
-      "https://tortyartystyczne.vercel.app/images/cake1.jpg",
-      "https://tortyartystyczne.vercel.app/images/cake2.jpg"
-    ],
+    "image": "https://tortyartystyczne.vercel.app/images/og-image.jpg",
     "description": "Domowe wypieki i torty na zamówienie",
     "address": {
       "@type": "PostalAddress",
