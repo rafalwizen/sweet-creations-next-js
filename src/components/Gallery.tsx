@@ -38,6 +38,8 @@ import cake36 from '../assets/images/image00036.webp';
 import cake37 from '../assets/images/image00037.webp';
 import cake38 from '../assets/images/image00038.webp';
 
+const fullHeightImages = new Set([cake34.src]);
+
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -48,6 +50,8 @@ const Gallery = () => {
         cake30, cake31, cake32, cake33, cake34, cake35, cake36,
         cake37, cake38, cake18, cake19, cake20, cake21, cake07
     ];
+
+    const isFullHeight = selectedImage ? fullHeightImages.has(selectedImage) : false;
 
     return (
         <>
@@ -74,12 +78,12 @@ const Gallery = () => {
                     className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
                     onClick={() => setSelectedImage(null)}
                 >
-                    <div className="max-w-4xl mx-4 relative w-screen h-screen">
+                    <div className={`mx-4 relative ${isFullHeight ? 'w-screen h-screen' : 'max-w-4xl w-screen h-screen'}`}>
                         <Image
                             src={selectedImage}
                             alt="Selected cake"
                             fill
-                            className="w-full h-auto object-cover"
+                            className={`w-full h-auto ${isFullHeight ? 'object-contain' : 'object-cover'}`}
                             priority
                         />
                     </div>
