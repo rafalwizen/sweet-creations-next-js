@@ -1,4 +1,3 @@
-'use client';
 import Image from 'next/image';
 import profilePhoto from "@/assets/images/profile_photo.webp";
 
@@ -13,7 +12,7 @@ const About = () => {
                     <Image
                         src={profilePhoto}
                         alt="Profile"
-                        priority
+                        placeholder="blur"
                         className="rounded-full w-72 h-72 mx-auto object-cover shadow-lg border-4 border-white"
                     />
                 </div>

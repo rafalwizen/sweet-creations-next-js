@@ -1,7 +1,6 @@
 'use client';
 import { useState, FormEvent } from "react";
 import Image from 'next/image';
-import emailjs from '@emailjs/browser';
 import backgroundImage from '../assets/images/wood_background.webp';
 import About from "@/components/About";
 
@@ -16,7 +15,7 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus(null);
@@ -26,6 +25,7 @@ const Contact = () => {
         const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string;
         const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string;
 
+        const emailjs = (await import('@emailjs/browser')).default;
         emailjs.sendForm(serviceID, templateID, form, userID)
             .then(() => {
                 console.log("Wiadomość wysłana pomyślnie");
@@ -52,8 +52,8 @@ const Contact = () => {
                 src={backgroundImage}
                 alt="Background"
                 fill
+                placeholder="blur"
                 className="object-cover"
-                priority
             />
             <div className="absolute inset-0 bg-black/30" />
 

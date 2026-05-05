@@ -67,6 +67,9 @@ const Gallery = () => {
                             alt={`Cake ${index + 1}`}
                             width={400}
                             height={384}
+                            loading="lazy"
+                            placeholder="blur"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             className="w-full h-96 object-cover rounded-lg shadow-md"
                         />
                     </div>

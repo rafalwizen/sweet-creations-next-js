@@ -1,12 +1,13 @@
 'use client';
 
-import { Suspense } from "react";
 import Image from "next/image";
-import Gallery from "../components/Gallery";
+import dynamic from "next/dynamic";
 import backgroundImage from '../assets/images/wood_background.webp';
 import logo from '../assets/images/logo.webp';
 import Contact from "@/components/Contact";
 import {Footer} from "@/components/Footer";
+
+const Gallery = dynamic(() => import("./Gallery"), { ssr: false });
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
                     alt="Background"
                     priority
                     fill
+                    placeholder="blur"
                     className="absolute inset-0 object-cover w-full h-full z-0"
                     sizes="100vw"
                 />
@@ -33,6 +35,7 @@ const Home = () => {
                                 src={logo}
                                 alt="Logo"
                                 priority
+                                placeholder="blur"
                                 className="rounded-full object-cover shadow-lg border-4 border-white w-full h-full"
                             />
                         </div>
@@ -56,10 +59,10 @@ const Home = () => {
 
 export default function Page() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <>
             <Home />
             <Contact />
             <Footer />
-        </Suspense>
+        </>
     );
 }
