@@ -1,11 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
-
 const Navbar = () => {
-    const pathname = usePathname();
-    const router = useRouter();
-
     const scrollToSection = (id: string, offset: number = -60) => {
         const element = document.getElementById(id);
         if (element) {
@@ -18,8 +13,8 @@ const Navbar = () => {
     };
 
     const handleNavigation = (id: string) => {
-        if (pathname !== "/") {
-            router.push(`/?scrollTo=${id}`);
+        if (window.location.pathname !== "/") {
+            window.location.href = `/?scrollTo=${id}`;
         } else {
             scrollToSection(id);
         }

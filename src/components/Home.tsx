@@ -1,5 +1,6 @@
 import Image from "next/image";
 import backgroundImage from '../assets/images/wood_background.webp';
+import backgroundImageMobile from '../assets/images/wood_background_mobile.webp';
 import logo from '../assets/images/logo.webp';
 import GalleryLoader from "./GalleryLoader";
 
@@ -9,15 +10,23 @@ const Home = () => {
         <div className="pt-24 md:pt-16 w-full">
             <section
                 id="home"
-                className="relative h-[50vh] w-screen flex items-center justify-center"
+                className="relative h-[50vh] w-full flex items-center justify-center"
             >
                 <Image
-                    src={backgroundImage}
-                    alt="Background"
+                    src={backgroundImageMobile}
+                    alt=""
                     priority
                     fill
                     placeholder="blur"
-                    className="absolute inset-0 object-cover w-full h-full z-0"
+                    className="absolute inset-0 object-cover w-full h-full z-0 md:hidden"
+                    sizes="100vw"
+                />
+                <Image
+                    src={backgroundImage}
+                    alt=""
+                    fill
+                    placeholder="blur"
+                    className="absolute inset-0 object-cover w-full h-full z-0 hidden md:block"
                     sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-black/30 w-full z-0" />
@@ -28,7 +37,6 @@ const Home = () => {
                             <Image
                                 src={logo}
                                 alt="Logo"
-                                priority
                                 placeholder="blur"
                                 className="rounded-full object-cover shadow-lg border-4 border-white w-full h-full"
                             />

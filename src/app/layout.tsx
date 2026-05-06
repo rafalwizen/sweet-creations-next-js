@@ -11,7 +11,7 @@ const greatVibes = Great_Vibes({
 });
 
 const loraItalic = localFont({
-    src: "../assets/fonts/LoraItalic.ttf",
+    src: "../assets/fonts/LoraItalic.woff2",
     weight: "400",
     style: "italic",
     variable: "--font-lora-italic",
