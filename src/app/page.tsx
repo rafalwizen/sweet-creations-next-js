@@ -1,5 +1,9 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Home from "@/components/Home";
+import { Footer } from "@/components/Footer";
+
+const Contact = dynamic(() => import("@/components/Contact"));
 
 export const metadata: Metadata = {
   title: 'Strona Główna - Słodkie Wypieki',
@@ -7,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Strona Główna - Słodkie Wypieki',
     description: 'Domowe wypieki i torty na zamówienie z dostawą w Hanusku i okolicach.',
-    url: 'https://tortyartystyczne.vercel.app/',
+    url: 'https://hanuskowytorcik.vercel.app/',
     siteName: 'Słodkie Wypieki',
     images: [
       {
-        url: 'https://tortyartystyczne.vercel.app/images/og_image.jpg',
+        url: 'https://hanuskowytorcik.vercel.app/images/og_image.jpg',
         width: 464,
         height: 417,
         alt: 'Logo i wypieki Słodkie Wypieki',
@@ -26,7 +30,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Słodkie Wypieki",
-    "image": "https://tortyartystyczne.vercel.app/images/og-image.jpg",
+    "image": "https://hanuskowytorcik.vercel.app/images/og-image.jpg",
     "description": "Domowe wypieki i torty na zamówienie",
     "address": {
       "@type": "PostalAddress",
@@ -44,6 +48,8 @@ export default function HomePage() {
             dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Home />
+        <Contact />
+        <Footer />
       </>
   );
 }

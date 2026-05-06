@@ -1,13 +1,7 @@
-'use client';
-
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import backgroundImage from '../assets/images/wood_background.webp';
 import logo from '../assets/images/logo.webp';
-import Contact from "@/components/Contact";
-import {Footer} from "@/components/Footer";
-
-const Gallery = dynamic(() => import("./Gallery"), { ssr: false });
+import GalleryLoader from "./GalleryLoader";
 
 const Home = () => {
 
@@ -49,7 +43,7 @@ const Home = () => {
                         Moje realizacje
                     </h2>
                     <div className="w-full max-w-[2000px] mx-auto">
-                        <Gallery />
+                        <GalleryLoader />
                     </div>
                 </div>
             </section>
@@ -57,12 +51,4 @@ const Home = () => {
     );
 };
 
-export default function Page() {
-    return (
-        <>
-            <Home />
-            <Contact />
-            <Footer />
-        </>
-    );
-}
+export default Home;
