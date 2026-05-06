@@ -19,6 +19,7 @@ const loraItalic = localFont({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://hanuskowytorcik.vercel.app"),
     title: "Słodkie Wypieki - Domowe Ciasta i Torty na Zamówienie",
     description:
         "Oferuję przepyszne, domowe wypieki na każdą okazję. Torty urodzinowe, weselne, ciasta i słodkie przekąski wykonane z pasją i najlepszych składników.",
@@ -32,14 +33,14 @@ export const metadata: Metadata = {
         images: ["/images/og-image.jpg"],
     },
     alternates: {
-        canonical: "https://twoja-domena.pl",
+        canonical: "https://hanuskowytorcik.vercel.app",
     },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="pl" className={`${greatVibes.variable} ${loraItalic.variable}`}>
-        <body className="font-lora-italic">
+        <body className="font-lora">
         <Navbar />
         {children}
         </body>

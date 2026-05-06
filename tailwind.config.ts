@@ -22,7 +22,7 @@ export default {
       },
       fontFamily: {
         greatVibes: ['GreatVibes', 'cursive'],
-        lora: ['LoraItalic', 'serif'],
+        lora: ['var(--font-lora-italic)', 'serif'],
       },
     },
   },
