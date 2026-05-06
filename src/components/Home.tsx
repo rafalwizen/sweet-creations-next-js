@@ -1,8 +1,10 @@
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import backgroundImage from '../assets/images/wood_background.webp';
 import backgroundImageMobile from '../assets/images/wood_background_mobile.webp';
 import logo from '../assets/images/logo.webp';
-import GalleryLoader from "./GalleryLoader";
+
+const Gallery = dynamic(() => import("./Gallery"));
 
 const Home = () => {
 
@@ -37,6 +39,7 @@ const Home = () => {
                             <Image
                                 src={logo}
                                 alt="Logo"
+                                priority
                                 placeholder="blur"
                                 className="rounded-full object-cover shadow-lg border-4 border-white w-full h-full"
                             />
@@ -51,7 +54,7 @@ const Home = () => {
                         Moje realizacje
                     </h2>
                     <div className="w-full max-w-[2000px] mx-auto">
-                        <GalleryLoader />
+                        <Gallery />
                     </div>
                 </div>
             </section>
