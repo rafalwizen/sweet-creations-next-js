@@ -3,6 +3,7 @@ import { Great_Vibes } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { GalleryViewProvider } from "@/context/GalleryViewContext";
 
 const greatVibes = Great_Vibes({
     subsets: ["latin"],
@@ -41,8 +42,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="pl" className={`${greatVibes.variable} ${loraItalic.variable}`}>
         <body className="font-lora">
-        <Navbar />
-        {children}
+        <GalleryViewProvider>
+            <Navbar />
+            {children}
+        </GalleryViewProvider>
         </body>
         </html>
     );
