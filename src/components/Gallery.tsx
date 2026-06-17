@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useGalleryView } from "@/context/GalleryViewContext";
 import cake01 from '../assets/images/image00001.webp';
 import cake02 from '../assets/images/image00002.webp';
 import cake03 from '../assets/images/image00003.webp';
@@ -42,6 +43,7 @@ const fullHeightImages = new Set([cake34.src]);
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const { mobileColumns } = useGalleryView();
 
     const images = [
         cake24, cake22, cake01, cake02, cake03, cake04, cake06,
@@ -53,9 +55,21 @@ const Gallery = () => {
 
     const isFullHeight = selectedImage ? fullHeightImages.has(selectedImage) : false;
 
+    // Full static class strings so Tailwind keeps them after purging.
+    const gridClass =
+        mobileColumns === 2
+            ? "grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+
+    // Match the served image resolution to the current mobile layout.
+    const imageSizes =
+        mobileColumns === 2
+            ? "(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw"
+            : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw";
+
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className={gridClass}>
                 {images.map((image, index) => (
                     <div
                         key={index}
@@ -66,11 +80,11 @@ const Gallery = () => {
                             src={image}
                             alt={`Cake ${index + 1}`}
                             width={400}
-                            height={384}
+                            height={400}
                             loading="lazy"
                             placeholder="blur"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="w-full h-96 object-cover rounded-lg shadow-md"
+                            sizes={imageSizes}
+                            className="w-full aspect-square object-cover rounded-lg shadow-md"
                         />
                     </div>
                 ))}
