@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Słodkie Wypieki',
     images: [
       {
-        url: 'https://hanuskowytorcik.vercel.app/images/og_image.jpg',
+        url: 'https://hanuskowytorcik.vercel.app/images/og-image.jpg',
         width: 464,
         height: 417,
         alt: 'Logo i wypieki Słodkie Wypieki',
