@@ -1,7 +1,6 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import backgroundImage from '../assets/images/wood_background.webp';
-import backgroundImageMobile from '../assets/images/wood_background_mobile.webp';
 import logo from '../assets/images/logo.webp';
 
 const Gallery = dynamic(() => import("./Gallery"));
@@ -15,20 +14,12 @@ const Home = () => {
                 className="relative h-[50vh] w-full flex items-center justify-center"
             >
                 <Image
-                    src={backgroundImageMobile}
+                    src={backgroundImage}
                     alt=""
                     priority
                     fill
                     placeholder="blur"
-                    className="absolute inset-0 object-cover w-full h-full z-0 md:hidden"
-                    sizes="100vw"
-                />
-                <Image
-                    src={backgroundImage}
-                    alt=""
-                    fill
-                    placeholder="blur"
-                    className="absolute inset-0 object-cover w-full h-full z-0 hidden md:block"
+                    className="absolute inset-0 object-cover w-full h-full z-0"
                     sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-black/30 w-full z-0" />
